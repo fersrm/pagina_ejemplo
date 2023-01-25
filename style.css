@@ -225,9 +225,6 @@ footer{
 .attribution a { color: hsl(228, 45%, 44%); }
 
 @media screen and (min-width:1000px) {
-    body{
-        font-size: 18px;
-    }
     header{
         max-width: 1300px;
     }
@@ -289,6 +286,9 @@ footer{
     }
 }
 @media screen and (min-width:1200px) {
+    body{
+        font-size: 18px;
+    }
     .primera h1{
         font-size: 4rem;
     }
