@@ -25,15 +25,19 @@ img{
     height: 100%;
 }
 header{
+    width: 100%;
+    background-color: var(--Off-white);
+    position: fixed;
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+}
+.header_contenedor{
     width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 5rem;
-    justify-self: center;
-    position: fixed;
-    background-color: var(--Off-white);
-    z-index: 500;
 }
 .logo{
     width: 2.5rem;
@@ -225,7 +229,7 @@ footer{
 .attribution a { color: hsl(228, 45%, 44%); }
 
 @media screen and (min-width:1000px) {
-    header{
+    .header_contenedor{
         max-width: 1300px;
     }
     .menu-mobile,.hambur{
