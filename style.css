@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root{   
+    --Soft-orange: #e9ab53;
+    --Soft-red: #f15e50;
+    --Off-white: #fffdfa;
+    --Grayish-blue: #c5c6ce;
+    --Dark-grayish-blue: #5d5f79;
+    --Very-dark-blue: #00001a;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    display: grid;
+    justify-content: center;
+    position: relative;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+header{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    justify-self: center;
+    position: fixed;
+    background-color: var(--Off-white);
+    z-index: 500;
+}
+.logo{
+    width: 2.5rem;
+    height: 1.8rem;
+}
+.hambur{
+    width: 2.5rem;
+    height: 1rem;
+    cursor: pointer;
+    z-index: 1100;
+    position: relative;
+}
+.hambur img{
+    position: absolute;
+}
+.hambur .close{
+    display: none;
+}
+.menu_pc{
+    display: none;
+}
+/* menu mobile*/
+.menu-mobile{
+    position: absolute;
+    background-color: var(--Off-white);
+    width: 78%;
+    height: 100vh;
+    top: 0;
+    right: -100%;
+    z-index: 1000;
+    transition: right .4s
+}
+.menu-mobile ul{
+    margin-top: 10rem;
+}
+.menu-mobile li{
+    margin: 2rem 0;
+}
+/* activo*/
+body.activo{
+    overflow: hidden;
+}
+body.activo::after,header.activo::after{
+    position:absolute;
+    content: '';
+    width: 100%;
+    height: 1000vh;
+    background-color: hsla(240, 100%, 5%, 0.455);
+}
+header.activo::after{
+    height: 5rem;
+}
+.menu-mobile.activo{
+    transition: right .3s;
+    right: -10%;
+}
+.hambur.activo{
+    width: 2rem;
+    height: 2rem;
+}
+
+.hambur.activo .close{
+    display: block;
+ 
+}
+@keyframes rotacion {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.hambur.activo .close img{
+    animation: rotacion 0.5s;
+}
+.hambur.activo .open{
+    display: none;
+}
+/*-------------------*/
+
+ul li{
+    list-style: none;
+    cursor: pointer;
+}
+ul li a{
+    text-decoration: none;
+    color: var(--Very-dark-blue);
+}
+ul li a:hover{
+    color: var(--Soft-red);
+}
+.contenedor{
+    margin-top: 5rem;
+    display: grid;
+    justify-self: center;
+    gap: 3rem;
+    width: 90%;
+}
+.primera h1{
+    font-size: 2.5rem;
+    margin: 1rem 0;
+}
+.primera p,.tercera p{
+    color: var(--Dark-grayish-blue);
+    line-height: 1.5rem;
+}
+.primera button{
+    background-color: var(--Soft-red);
+    color: var(--Off-white);
+    border: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+.primera button:hover{
+    background-color: var(--Very-dark-blue);
+}
+/* segunda parte*/
+.segunda{
+    background-color: var(--Very-dark-blue);
+    padding: 1rem;
+}
+.segunda article{
+    position: relative;
+}
+.segunda .art{
+    margin-bottom: 4rem;
+}
+.segunda a{
+    text-decoration: none
+}
+.segunda h2{
+    margin: 0;
+    color: var(--Soft-orange);
+    font-size: 2rem;
+}
+.segunda p{
+    color: var(--Grayish-blue);
+    margin-bottom: 1.5rem;
+    line-height: 1.5rem;
+}
+.segunda h3{
+    color: var(--Off-white);
+    cursor: pointer;
+}
+.segunda h3:hover{
+    color: var(--Soft-orange);
+}
+.segunda .art::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: var(--Grayish-blue);
+}
+/*tercera parte*/
+.tercera{
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    gap: 2rem;
+}
+.tercera article{
+   display: grid;
+   grid-template-columns: 1.2fr 3fr;
+   gap: 1.2rem;
+}
+.info span{
+    font-size: 2rem;
+    color: var(--Grayish-blue);
+    font-weight: 800;
+}
+.info h3{
+    cursor: pointer;
+}
+.info h3:hover{
+    color: var(--Soft-red);
+}
+.info p{
+    margin: 0;
+}
+footer{
+    margin-top: 4rem;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (min-width:1000px) {
+    body{
+        font-size: 18px;
+    }
+    header{
+        max-width: 1300px;
+    }
+    .menu-mobile,.hambur{
+        display: none;
+    }
+    .menu_pc{
+        display: block;
+        width: 45%;
+    }
+    .menu_pc ul{
+        display: flex;
+        justify-content: space-between;
+    }
+    .contenedor{
+        max-width: 1440px;
+        grid-template-columns: 1fr 400px;
+        grid-template-rows: 1fr 150px;
+        gap: 2rem;
+        grid-template-areas: 
+            "primera segunda"
+            "primera segunda"
+            "tercera tercera";
+    }
+    .primera{ grid-area: primera;}
+    .segunda{ grid-area: segunda; }
+    .tercera{ grid-area: tercera; }
+
+    .primera{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 250px;
+        grid-template-areas: 
+        "img img"
+        "titulo parrafo";
+    }
+    .imginicio{ grid-area: img;}
+    .primera h1{
+        grid-area: titulo; 
+        font-size: 3rem;
+        font-weight: 800;
+    }
+    .texto {
+        position: relative; 
+        grid-area: parrafo;
+    }
+    .primera button{
+        position: absolute;
+        bottom: 0;
+    }
+    .segunda p,.primera p,.tercera p{
+        line-height: 2rem;
+    }
+    .tercera{
+        margin-top: 4rem;
+        gap:3rem;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: 1fr;
+    }
+}
+@media screen and (min-width:1200px) {
+    .primera h1{
+        font-size: 4rem;
+    }
+}
