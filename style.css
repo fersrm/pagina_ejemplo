@@ -288,6 +288,14 @@ footer{
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: 1fr;
     }
+
+    body.activo{
+        overflow:visible;
+    }
+    body.activo::after,header.activo::after{
+       display: none;
+    }
+
 }
 @media screen and (min-width:1200px) {
     body{
