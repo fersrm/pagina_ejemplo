@@ -246,10 +246,10 @@ footer{
     .contenedor{
         max-width: 1440px;
         grid-template-columns: 1fr 400px;
-        grid-template-rows: 1fr 150px;
+        grid-template-rows: 1fr 170px;
         gap: 2rem;
+        row-gap: 4rem;
         grid-template-areas: 
-            "primera segunda"
             "primera segunda"
             "tercera tercera";
     }
@@ -260,7 +260,7 @@ footer{
     .primera{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 250px;
+        grid-template-rows: 1fr;
         grid-template-areas: 
         "img img"
         "titulo parrafo";
@@ -271,19 +271,12 @@ footer{
         font-size: 3rem;
         font-weight: 800;
     }
-    .texto {
-        position: relative; 
-        grid-area: parrafo;
-    }
-    .primera button{
-        position: absolute;
-        bottom: 0;
-    }
+    .texto { grid-area: parrafo;}
+
     .segunda p,.primera p,.tercera p{
         line-height: 2rem;
     }
     .tercera{
-        margin-top: 4rem;
         gap:3rem;
         grid-template-columns: repeat(3,1fr);
         grid-template-rows: 1fr;
